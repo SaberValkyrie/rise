@@ -1,0 +1,111 @@
+﻿@model HealthInsurance.Models.Policy
+
+@{
+    ViewData["Title"] = "Buy";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<hr />
+
+<div class="row">
+   
+
+    <div class="col-md-8">
+        <h4>Order For Insurence Policy</h4>
+        <hr />
+
+        <form asp-action="Buy" method="post">
+
+       
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label" for="policyId">   
+            </label>
+                <div class="col-sm-9">
+                    <label asp-for="PolicyId" class="control-label"></label>
+                    <input asp-for="PolicyId" class="form-control" />
+                    <span asp-validation-for="PolicyId" class="text-danger"></span>
+                </div>
+            </div>
+
+       
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label" for="policyName">
+                </label>
+                <div class="col-sm-9">
+                    <label asp-for="PolicyName" class="control-label"></label>
+                    <input asp-for="PolicyName" class="form-control" />
+                    <span asp-validation-for="PolicyName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label" for="Amount">
+                </label>
+                <div class="col-sm-9">
+                    <label asp-for="Amount" class="control-label"></label>
+                    <input asp-for="Amount" class="form-control" />
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label" for="Emi">
+                </label>
+                <div class="col-sm-9">
+                    <label asp-for="Emi" class="control-label"></label>
+                    <input asp-for="Emi" class="form-control" />
+                    <span asp-validation-for="Emi" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label" for="requestDate">
+     
+                </label>
+                <div class="col-sm-9">
+                    Request Date:
+                    <input class="form-control" type="date" id="Date" name="requestDate" required />
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label" for="requestDate">
+
+                </label>
+                <div class="col-sm-9">
+                    Company Name:
+                    <input class="form-control" type="text" id="companyName" name="companyName" required />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label" for="companyId">
+                </label>
+                <div class="col-sm-9">
+                    <label asp-for="CompanyId" class="control-label"></label>
+                    <input asp-for="CompanyId" class="form-control" />
+                    <span asp-validation-for="CompanyId" class="text-danger"></span>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-group row">
+                <div class="col-sm-9 offset-sm-3">
+                    <button class="btn btn-primary" type="submit">Add Policy</button>
+                    <a class="btn btn-secondary" asp-action="Index">Cancel</a>
+                </div>
+        </form>
+
+
+        @section Scripts {
+            @{
+                await Html.RenderPartialAsync("_ValidationScriptsPartial");
+            }
+        }
+
